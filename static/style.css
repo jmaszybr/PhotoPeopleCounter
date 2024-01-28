@@ -87,7 +87,17 @@ header a:hover {
 }
 
 .image-section h2 {
-    margin-top: 0;
+    margin-top: 20px;
+    background-color: #f0f0f0; /* Subtelne tło */
+    color: #333; /* Kolor tekstu */
+    padding: 10px; /* Odstępy wewnętrzne dla lepszej czytelności */
+    font-size: 18px; /* Rozmiar czcionki mniejszy */
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+.green-background {
+    background-color: #b0e57c; /* Delikatny zielony kolor tła */
+    color: #333; /* Kolor tekstu (taki sam jak w stylu ogólnym) */
 }
 
 footer {

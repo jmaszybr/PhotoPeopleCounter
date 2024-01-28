@@ -27,21 +27,21 @@
 
     {% if original_example_image %}
     <div class="image-section">
-        <h2>Przykładowy obraz przed analizą:</h2>
+        <h2>Przykładowy obraz przed analizą</h2>
         <img src="data:image/jpeg;base64,{{ original_example_image }}" alt="Original Example Image">
-        <h2>Przykładowy obraz po analizie:</h2>
+        <h2>Przykładowy obraz po analizie</h2>
         <img src="data:image/jpeg;base64,{{ processed_example_image }}" alt="Processed Example Image">
-        <p>Na przykładowym obrazie wykryto {{ example_face_count }} osób.</p>
+        <h2>Liczba osób wykrytych na zdjęciu to: {{ example_face_count }} </h2>
     </div>
     {% endif %}
 
     {% if original_image %}
      <div class="image-section">
-        <h2>Twoj obraz przed analizą:</h2>
+        <h2>Twoj obraz przed analizą</h2>
         <img src="data:image/jpeg;base64,{{ original_image }}" alt="Your Original Image">
-        <h2>Twój obraz po analizie:</h2>
+        <h2>Twój obraz po analizie</h2>
         <img src="data:image/jpeg;base64,{{ processed_image }}" alt="Your Processed Image">
-        <p>Na Twoim obrazie wykryto {{ face_count }} osób.</p>
+        <h2>Liczba osób wykrytych na zdjęciu to:  {{ face_count }} </h2>
      </div>
     {% endif %}
 
