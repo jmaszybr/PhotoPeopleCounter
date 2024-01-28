@@ -6,7 +6,11 @@
 </head>
 <body>
 <div class="container">
-    <h1>Analiza Obrazu</h1>
+    <h1>PhotoPeopleCounter</h1>
+    <p>Aplikacja napisana w języku Python, która umożliwia liczenie osób
+        na zdjęciach na podstawie wykrytych twarzy. Zastosowany został klasyfikator kaskadowy Haar,
+        który jest integralną częścią biblioteki OpenCV. Demonstruje trzy sposoby przekazywania zdjęć do analizy:
+        1) przykładowy plik dostępny w aplikacji 2) wybór obrazu z dysku komputera, 3) wprowadzenie URL obrazu z internetu. </p>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file">
         <input type="submit" value="Wyślij obraz">
