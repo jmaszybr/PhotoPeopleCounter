@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Analiza Obrazu</title>
+</head>
+<body>
+<div class="container">
+    <h1>Analiza Obrazu</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Wyślij obraz">
+    </form>
+
+    <form action="/upload_url" method="post">
+        <input type="text" name="image_url" class="input-url" placeholder="Wpisz adres URL obrazu">
+        <input type="submit" value="Analizuj obraz z URL">
+    </form>
+
+    {% if original_example_image %}
+    <div class="image-section">
+        <h2>Przykładowy obraz przed analizą:</h2>
+        <img src="data:image/jpeg;base64,{{ original_example_image }}" alt="Original Example Image">
+        <h2>Przykładowy obraz po analizie:</h2>
+        <img src="data:image/jpeg;base64,{{ processed_example_image }}" alt="Processed Example Image">
+        <p>Na przykładowym obrazie wykryto {{ example_face_count }} osób.</p>
+    </div>
+    {% endif %}
+
+    {% if original_image %}
+     <div class="image-section">
+        <h2>Twoj obraz przed analizą:</h2>
+        <img src="data:image/jpeg;base64,{{ original_image }}" alt="Your Original Image">
+        <h2>Twój obraz po analizie:</h2>
+        <img src="data:image/jpeg;base64,{{ processed_image }}" alt="Your Processed Image">
+        <p>Na Twoim obrazie wykryto {{ face_count }} osób.</p>
+     </div>
+    {% endif %}
+
+</div>
+</body>
+
+</html>
