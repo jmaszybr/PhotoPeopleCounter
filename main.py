@@ -40,8 +40,9 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    if 'file' not in request.files:
-        return render_template('index.html', error="Nie znaleziono pliku")
+    if 'file' not in request.files or request.files['file'].filename == '':
+        return render_template('index.html', error="Brak obrazu do analizy")
+    file = request.files['file']
 
     file = request.files['file']
     in_memory_file = io.BytesIO()
@@ -63,7 +64,7 @@ def upload_file():
 def upload_from_url():
     image_url = request.form['image_url']
     if not image_url:
-        return render_template('index.html', error="Nie podano adresu URL")
+        return render_template('index.html', error="Brak adresu URL obrazu do analizy")
 
     response = requests.get(image_url)
     if response.status_code == 200:

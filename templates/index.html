@@ -17,6 +17,10 @@
         <input type="submit" value="Analizuj obraz z URL">
     </form>
 
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
     {% if original_example_image %}
     <div class="image-section">
         <h2>Przykładowy obraz przed analizą:</h2>
