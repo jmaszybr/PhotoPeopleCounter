@@ -1,34 +1,47 @@
+/* Styl główny */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e0e0e0; /* Szare tło dla całej strony */
+    background-color: #e0e0e0; /* Jednolite szare tło dla całej strony */
     color: #333;
     line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    width: 80%;
-    margin: 40px auto; /* Dodano margines górny i dolny */
-    overflow: hidden;
-    padding: 20px;
-    max-width: 800px; /* Maksymalna szerokość kontenera */
-    background-color: #fff; /* Białe tło dla kontenera */
-    border-radius: 10px; /* Zaokrąglone rogi kontenera */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtelny cień dla kontenera */
+/* Stylizacja akapitu */
+p.info-text {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 1em;
+    font-style: italic;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Kontener główny */
+.container {
+    width: 80%;
+    max-width: 800px; /* Ograniczenie maksymalnej szerokości */
+    margin: 40px auto; /* Centralne wyrównanie z marginesem górnym i dolnym */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtelny cień */
+}
 
+/* Nagłówek */
 header {
     background: #50b3a2;
-    color: #ffffff;
+    color: white;
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: #e8491d 3px solid;
+    border-bottom: 3px solid #e8491d;
 }
 
 header a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
@@ -43,8 +56,7 @@ header ul {
 
 header li {
     float: left;
-    display: inline;
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
 }
 
 header #branding {
@@ -66,73 +78,86 @@ header .highlight, header .current a {
 }
 
 header a:hover {
-    color: #ffffff;
     font-weight: bold;
 }
 
+/* Sekcja obrazów */
 .image-section {
     margin: 20px 0;
 }
 
 .image-section img {
-    max-height: 250px; /* Maksymalna wysokość obrazu */
-    width: auto; /* Szerokość automatycznie dostosowuje się do wysokości, zachowując proporcje */
-    height: auto; /* Wysokość automatycznie dostosowuje się do szerokości, zachowując proporcje */
+    max-height: 250px;
+    width: auto;
+    height: auto;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto; /* Centrowanie obrazu */
 }
 
-.image-section h2 {
+.image-section h2, .image-section h2.custom-background {
     margin-top: 20px;
-    background-color: #f0f0f0; /* Subtelne tło */
-    color: #333; /* Kolor tekstu */
-    padding: 10px; /* Odstępy wewnętrzne dla lepszej czytelności */
-    font-size: 18px; /* Rozmiar czcionki mniejszy */
-    text-align: center; /* Wyśrodkowanie tekstu */
+    background-color: #f0f0f0; /* Domyślne tło */
+    color: #333;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
 }
 
+.image-section h2.custom-background {
+    background-color: #e0f0e0; /* Alternatywne tło */
+}
+
+/* Zielone tło */
 .green-background {
-    background-color: #b0e57c; /* Delikatny zielony kolor tła */
-    color: #333; /* Kolor tekstu (taki sam jak w stylu ogólnym) */
+    background-color: #b0e57c;
+    color: #333;
 }
 
+/* Stopka */
 footer {
     padding: 20px;
     margin-top: 20px;
-    color: #ffffff;
+    color: white;
     background-color: #e8491d;
     text-align: center;
 }
 
-input[type="file"] {
-    margin-top: 20px;
+/* Formularz i elementy wejściowe */
+input[type="file"],
+input[type="submit"],
+.input-url {
+    width: 70%; /* Spójna szerokość dla elementów formularza */
+    padding: 8px 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 input[type="submit"] {
     appearance: button;
-    padding: 10px 15px;
     background: #50b3a2;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 input[type="submit"]:hover {
     background: #429587;
 }
 
-.input-url {
-    width: 70%; /* Dostosuj szerokość według potrzeb */
-    padding: 8px 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Responsywność - Media Queries (opcjonalnie) */
+@media (max-width: 600px) {
+    .container, header li, .input-url, input[type="submit"] {
+        width: 100%;
+    }
 }

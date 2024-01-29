@@ -7,13 +7,16 @@
 <body>
 <div class="container">
     <h1>PhotoPeopleCounter</h1>
-    <p>Aplikacja napisana w języku Python, która umożliwia liczenie osób
-        na zdjęciach na podstawie wykrytych twarzy. Zastosowany został klasyfikator kaskadowy Haar,
-        który jest integralną częścią biblioteki OpenCV. Demonstruje trzy sposoby przekazywania zdjęć do analizy:
-        1) przykładowy plik dostępny w aplikacji 2) wybór obrazu z dysku komputera, 3) wprowadzenie URL obrazu z internetu. </p>
+    <h4>Aplikacja do Wykrywania i Liczenia Osób na Zdjęciach</h4>
+    <p class = "info-text"> Aplikacja, opracowana w języku Python i bazująca na klasyfikatorze kaskadowym Haar
+        z biblioteki OpenCV, umożliwia identyfikację twarzy i zliczanie osób na zdjęciach.
+        Dostępne są trzy metody przesyłania zdjęć do analizy: analiza domyślnego pliku dostępnego w
+        aplikacji, wybór obrazu z dysku komputera oraz wprowadzenie adresu URL obrazu z internetu. </p>
+    <p class = "info-text">Aplikacja została przygotowana w ramach zaliczenia modułu realizowanego w ramach studiów podyplomowych
+        z zakresu "Uczenie Maszynowe i Data Science". autor: JMASZYBR </p>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file">
-        <input type="submit" value="Wyślij obraz">
+        <input type="submit" value="Analizuj wczytany obraz">
     </form>
 
     <form action="/upload_url" method="post">
@@ -31,7 +34,7 @@
         <img src="data:image/jpeg;base64,{{ original_example_image }}" alt="Original Example Image">
         <h2>Przykładowy obraz po analizie</h2>
         <img src="data:image/jpeg;base64,{{ processed_example_image }}" alt="Processed Example Image">
-        <h2>Liczba osób wykrytych na zdjęciu to: {{ example_face_count }} </h2>
+        <h2 class="custom-background">Liczba osób wykrytych na zdjęciu: {{ example_face_count }} </h2>
     </div>
     {% endif %}
 
@@ -41,7 +44,7 @@
         <img src="data:image/jpeg;base64,{{ original_image }}" alt="Your Original Image">
         <h2>Twój obraz po analizie</h2>
         <img src="data:image/jpeg;base64,{{ processed_image }}" alt="Your Processed Image">
-        <h2>Liczba osób wykrytych na zdjęciu to:  {{ face_count }} </h2>
+        <h2 class="custom-background">Liczba osób wykrytych na zdjęciu:  {{ face_count }} </h2>
      </div>
     {% endif %}
 

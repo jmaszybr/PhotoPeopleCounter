@@ -79,6 +79,12 @@ def upload_file():
 
 @app.route('/upload_url', methods=['POST'])
 def upload_from_url():
+    # Obsługuje ścieżkę '/upload_url' dla żądań POST.
+    # Pobiera obraz z podanego URL, przetwarza go dla OpenCV, a następnie wykrywa twarze.
+    # Jeśli pobranie się powiedzie, koduje oryginalny i przetworzony obraz do formatu Base64
+    # i zwraca je do szablonu HTML, wraz z liczbą wykrytych twarzy.
+    # W przypadku braku URL lub niepowodzenia pobrania, zwraca szablon z komunikatem o błędzie.
+
     image_url = request.form['image_url']
     if not image_url:
         return render_template('index.html', error="Brak adresu URL obrazu do analizy")
