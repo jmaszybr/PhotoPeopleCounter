@@ -13,7 +13,7 @@
         Dostępne są trzy metody przesyłania zdjęć do analizy: analiza domyślnego pliku dostępnego w
         aplikacji, wybór obrazu z dysku komputera oraz wprowadzenie adresu URL obrazu z internetu. </p>
     <p class = "info-text">Aplikacja została przygotowana w ramach zaliczenia modułu realizowanego w ramach studiów podyplomowych
-        z zakresu "Uczenie Maszynowe i Data Science". autor: JMASZYBR </p>
+        z zakresu "Uczenie Maszynowe i Data Science". autor: Joanna Maszybrocka </p>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file">
         <input type="submit" value="Analizuj wczytany obraz">
@@ -40,7 +40,7 @@
 
     {% if original_image %}
      <div class="image-section">
-        <h2>Twoj obraz przed analizą</h2>
+        <h2>Twój obraz przed analizą</h2>
         <img src="data:image/jpeg;base64,{{ original_image }}" alt="Your Original Image">
         <h2>Twój obraz po analizie</h2>
         <img src="data:image/jpeg;base64,{{ processed_image }}" alt="Your Processed Image">
