@@ -4,7 +4,7 @@
 ### Autor: Joanna Maszybrocka
 
 ## Opis
-Aplikacja, napisana jest w języku Python, wykorzystuje klasyfikator kaskadowy Haar z biblioteki OpenCV do identyfikacji twarzy i zliczania osób na zdjęciach. Użytkownik ma możliwość przesyłania zdjęć do analizy na trzy różne sposoby:
+Prosta aplikacja, napisana jest w języku Python, wykorzystuje klasyfikator kaskadowy Haar z biblioteki OpenCV do identyfikacji twarzy i zliczania osób na zdjęciach. Użytkownik ma możliwość przesyłania zdjęć do analizy na trzy różne sposoby:
 
 - Wczytywanie obrazów bezpośrednio z dysku serwera.
 - Przesyłanie obrazów przez użytkownika.
